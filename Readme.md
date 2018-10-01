@@ -18,7 +18,7 @@ Curlew (a bird with a long, narrow beak) will get a single object from an S3 buc
 Download source:
 
 ```bash
-go get git@github.com:veritone/curlew.git
+git clone git@github.com:veritone/curlew.git
 ```
 
 Download a release:
