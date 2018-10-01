@@ -8,9 +8,31 @@ Curlew (a bird with a long, narrow beak) will get a single object from an S3 buc
 
 ## Contents
 
+- [Download](#download)
 - [Usage](#usage)
 - [Permissions](#permissions)
 - [Dev](#dev)
+
+## Download
+
+Download source:
+
+```bash
+go get git@github.com:veritone/curlew.git
+```
+
+Download a release:
+
+```bash
+# OS X
+curl -L -o /usr/bin/curlew https://github.com/veritone/curlew/releases/download/0.1.0/curlew-0.1.0-darwin-amd64
+
+# Linux
+curl -L -o /usr/bin/curlew https://github.com/veritone/curlew/releases/download/0.1.0/curlew-0.1.0-linux-amd64
+
+# Update permissions in all cases
+chmod a+x /usr/bin/curlew
+```
 
 ## Usage
 
