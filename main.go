@@ -14,9 +14,12 @@ import (
 
 var (
 	s3Scheme = "s3"
+	s3Region = ""
 )
 
 func main() {
+	s3Region = os.Getenv("AWS_S3_REGION")
+
 	objPath := getObjPath()
 
 	obj, err := getObj(objPath)
@@ -59,7 +62,11 @@ func getObj(objPath string) (objReader io.ReadCloser, err error) {
 	key := s3URL.Path
 
 	sess := session.New()
-	svcS3 := s3.New(sess)
+	cfg := aws.NewConfig()
+	if s3Region != "" {
+		cfg = cfg.WithRegion(s3Region)
+	}
+	svcS3 := s3.New(sess, cfg)
 
 	in := s3.GetObjectInput{
 		Bucket: aws.String(bucket),
